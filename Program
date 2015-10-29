@@ -21,7 +21,8 @@ namespace DesafioDosGrupos
             Console.WriteLine("Entre com os nomes ou aperte enter para separar os grupos!");
             string nome = string.Empty;
 
-
+            //Enquanto o usuario não entrar com uma Empty, os nomes serão amarzenados na list ListaNomes;
+            
             do
             {
                 Console.WriteLine("Nome ou enter:");
@@ -33,6 +34,8 @@ namespace DesafioDosGrupos
                 }
             } while (nome != string.Empty);
 
+            //Caso o usuario insira menos de 5 nomes, o if abaixo evita erros com o proximo do while;
+            
             numlist = ListaNomes.Count;
 
             if (ListaNomes.Count >= 5)
@@ -66,6 +69,8 @@ namespace DesafioDosGrupos
                 } while (numlist >= 5);
             }
 
+            //Caso sobre algum nome que não preencha 5 vagas, eles seram colocados em um novo grupo com menos de 5 nomes;
+            
             switch (numlist)
             {
                 case 0:
