@@ -1,0 +1,129 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace DesafioDosGrupos
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            List<string> ListaNomes = new List<string>();
+            Random alt = new Random();
+            int num = 1;
+            int numalt;
+            int numlist = 0;
+
+            string nometemp = string.Empty;
+
+            Console.WriteLine("Entre com os nomes ou aperte enter para separar os grupos!");
+            string nome = string.Empty;
+
+
+            do
+            {
+                Console.WriteLine("Nome ou enter:");
+                nome = Console.ReadLine();
+
+                if (!string.IsNullOrEmpty(nome))
+                {
+                    ListaNomes.Add(nome);
+                }
+            } while (nome != string.Empty);
+
+            numlist = ListaNomes.Count;
+
+            if (ListaNomes.Count >= 5)
+            {
+
+                do
+                {
+                    Console.WriteLine("Grupo {0}", num);
+                    numalt = alt.Next(0, ListaNomes.Count);
+                    Console.WriteLine("{0}", ListaNomes[numalt]);
+                    ListaNomes.RemoveAt(numalt);
+
+                    numalt = alt.Next(0, ListaNomes.Count);
+                    Console.WriteLine("{0}", ListaNomes[numalt]);
+                    ListaNomes.RemoveAt(numalt);
+
+                    numalt = alt.Next(0, ListaNomes.Count);
+                    Console.WriteLine("{0}", ListaNomes[numalt]);
+                    ListaNomes.RemoveAt(numalt);
+
+                    numalt = alt.Next(0, ListaNomes.Count);
+                    Console.WriteLine("{0}", ListaNomes[numalt]);
+                    ListaNomes.RemoveAt(numalt);
+
+                    numalt = alt.Next(0, ListaNomes.Count);
+                    Console.WriteLine("{0}", ListaNomes[numalt]);
+                    ListaNomes.RemoveAt(numalt);
+
+                    num++;
+                    numlist = ListaNomes.Count;
+                } while (numlist >= 5);
+            }
+
+            switch (numlist)
+            {
+                case 0:
+                    break;
+
+                case 1:
+                    Console.WriteLine("Grupo {0}", num);
+                    numalt = alt.Next(0, ListaNomes.Count);
+                    Console.WriteLine("{0}", ListaNomes[numalt]);
+                    ListaNomes.RemoveAt(numalt);
+                    break;
+
+                case 2:
+                    Console.WriteLine("Grupo {0}", num);
+                    numalt = alt.Next(0, ListaNomes.Count);
+                    Console.WriteLine("{0}", ListaNomes[numalt]);
+                    ListaNomes.RemoveAt(numalt);
+
+                    numalt = alt.Next(0, ListaNomes.Count);
+                    Console.WriteLine("{0}", ListaNomes[numalt]);
+                    ListaNomes.RemoveAt(numalt);
+                    break;
+
+                case 3:
+                    Console.WriteLine("Grupo {0}", num);
+                    numalt = alt.Next(0, ListaNomes.Count);
+                    Console.WriteLine("{0}", ListaNomes[numalt]);
+                    ListaNomes.RemoveAt(numalt);
+
+                    numalt = alt.Next(0, ListaNomes.Count);
+                    Console.WriteLine("{0}", ListaNomes[numalt]);
+                    ListaNomes.RemoveAt(numalt);
+
+                    numalt = alt.Next(0, ListaNomes.Count);
+                    Console.WriteLine("{0}", ListaNomes[numalt]);
+                    ListaNomes.RemoveAt(numalt);
+                    break;
+
+                case 4:
+                    Console.WriteLine("Grupo {0}", num);
+                    numalt = alt.Next(0, ListaNomes.Count);
+                    Console.WriteLine("{0}", ListaNomes[numalt]);
+                    ListaNomes.RemoveAt(numalt);
+
+                    numalt = alt.Next(0, ListaNomes.Count);
+                    Console.WriteLine("{0}", ListaNomes[numalt]);
+                    ListaNomes.RemoveAt(numalt);
+
+                    numalt = alt.Next(0, ListaNomes.Count);
+                    Console.WriteLine("{0}", ListaNomes[numalt]);
+                    ListaNomes.RemoveAt(numalt);
+
+                    numalt = alt.Next(0, ListaNomes.Count);
+                    Console.WriteLine("{0}", ListaNomes[numalt]);
+                    ListaNomes.RemoveAt(numalt);
+                    break;
+            }
+            Console.ReadKey();
+        }
+    }
+}
